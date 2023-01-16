@@ -55,6 +55,10 @@ router.put('/:id', (req, res) => {
   .then((category) => {
     res.json(category);
   })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  })
 });
 
 router.delete('/:id', (req, res) => {
